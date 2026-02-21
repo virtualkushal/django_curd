@@ -75,6 +75,10 @@ regForm.onsubmit = (e) => {
     regForm.reset();
     getRegData();
 }
-
-getRegData();
-
+deleteAll = () => {
+    if (confirm("Are you sure you want to delete all items?")) {
+        allRegData = [];    
+        localStorage.setItem("allRegData", JSON.stringify(allRegData));
+        getRegData();
+    }
+}
