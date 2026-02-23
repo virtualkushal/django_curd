@@ -8,12 +8,14 @@ let nameInput = allInput[0];
 
 let allRegData = JSON.parse(localStorage.getItem("allRegData")) || [];
 let editIndex = null;
+let check = document.querySelectorAll(".item-checkbox");
 
 const getRegData = () => {
     reglist.innerHTML = ""; 
     allRegData.forEach((data, index) => {
         reglist.innerHTML += `
         <tr>
+            <td><input type="checkbox" class="item-checkbox"></td>
             <td>${index + 1}</td>
             <td class="item-name">${data.name}</td>
             <td>
@@ -82,3 +84,4 @@ deleteAll = () => {
         getRegData();
     }
 }
+getRegData();
